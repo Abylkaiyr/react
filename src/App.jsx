@@ -1,8 +1,12 @@
 
 import './App.css';
-import Button from './components/Button/Button';
 import CardButton from './components/CardButton/CardButton';
+import Header from './components/Header/Header';
+import JournalAddButton from './components/JournalAddButton/JournalAddButton';
 import JournalItem from './components/JournalItem/JournalItem';
+import JournalList from './components/JournalList/JournalList';
+import Body from './layouts/Body/Body';
+import LeftPanel from './layouts/LeftPanel/LeftPanel';
 
 function App() {
 	const data = [
@@ -23,37 +27,39 @@ function App() {
 		}
 	];
 	return (
-		<>
-			<h1>Heading</h1>
-			<p>Paragraph</p>
-			<Button/>
-			<CardButton>
-				<JournalItem
-					title={data[0].title}
-					text={data[0].text}
-					date={data[0].date}
-				/>
-			</CardButton>
-			<CardButton>
-				<JournalItem
-					title={data[1].title}
-					text={data[1].text}
-					date={data[1].date}
+		<div className='app'>
+			<LeftPanel>
+				<Header/>
+				<JournalAddButton></JournalAddButton>
+				<JournalList>
+					<CardButton>
+						<JournalItem
+							title={data[0].title}
+							text={data[0].text}
+							date={data[0].date}
+						/>
+					</CardButton>
+					<CardButton>
+						<JournalItem
+							title={data[1].title}
+							text={data[1].text}
+							date={data[1].date}
 					
-				/>
-			</CardButton>
-			<CardButton>
-				
-				<JournalItem
-					title={data[2].title}
-					text={data[2].text}
-					date={data[2].date}
-				/>
-			</CardButton>
-			
-			
-			
-		</>    
+						/>
+					</CardButton>
+					<CardButton>				
+						<JournalItem
+							title={data[2].title}
+							text={data[2].text}
+							date={data[2].date}
+						/>
+					</CardButton>
+				</JournalList>				
+			</LeftPanel>
+			<Body>
+				Body
+			</Body>			
+		</div>    
 	);
 }
 
