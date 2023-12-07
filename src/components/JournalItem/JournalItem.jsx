@@ -3,7 +3,6 @@ import './JournalItem.css';
 
 function JournalItem({title, text, date}){
 	const formattedDate = new Intl.DateTimeFormat('ru-RU').format(date);
-    
 	return (
 		<>
 			<h2 className='journal-item__header'>{title}</h2>

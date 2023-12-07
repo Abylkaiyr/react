@@ -42,8 +42,7 @@ function App() {
 					
 				/>
 			</CardButton>
-			<CardButton>
-				
+			<CardButton>				
 				<JournalItem
 					title={data[2].title}
 					text={data[2].text}
